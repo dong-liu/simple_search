@@ -1,7 +1,10 @@
 class Ticket < ApplicationRecord
 
+  # disable STI
+  self.inheritance_column = :_type_disabled
+
 	self.primary_key = :_id
-	
+
 	belongs_to :organization
 	has_and_belongs_to_many :users
 

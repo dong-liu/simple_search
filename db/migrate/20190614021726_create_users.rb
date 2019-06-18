@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     	t.string "external_id"
     	t.string "name"
     	t.string "alias"
-        t.datetime "created_at"
+        t.string "created_at", null: false, default: Time.now
     	t.boolean "active"
     	t.boolean "verified"
     	t.boolean "shared"

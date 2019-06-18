@@ -4,7 +4,7 @@ class CreateTickets < ActiveRecord::Migration[5.0]
     	t.string "_id", :null => false
     	t.string "url"
 	    t.string "external_id"
-	    t.datetime "created_at"
+	    t.string "created_at", null: false, default: Time.now
 	    t.string "type"
 	    t.string "subject"
 	    t.text "description"

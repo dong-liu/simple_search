@@ -15,7 +15,7 @@ class CreateTickets < ActiveRecord::Migration[5.0]
 	    t.integer "organization_id"
 	    t.string "tags"
 	    t.boolean "has_incidents"
-	    t.datetime "due_at"
+	    t.string "due_at", default: Time.now
 	    t.string "via"
 	    
       t.datetime "updated_at"

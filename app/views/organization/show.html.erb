@@ -1,0 +1,48 @@
+<% @page_title = "Show Organization Detail" %>
+
+<%= link_to("<< Back to List", organization_index_path, :class => 'back-link') %>
+
+<div class="organizations show">
+  <h2>Show Organization Detail</h2>
+
+  <table summary="Organization detail view">
+    <tr>
+      <th>_id</th>
+      <td><%= @organization._id %></td>
+    </tr>
+    <tr>
+      <th>url</th>
+      <td><%= @organization.url %></td>
+    </tr>
+    <tr>
+      <th>external_id</th>
+      <td><%= @organization.external_id %></td>
+    </tr>
+    <tr>
+      <th>name</th>
+      <td><%= @organization.name %></td>
+    </tr>
+    <tr>
+      <th>domain_names</th>
+      <td><%= @organization.domain_names %></td>
+    </tr>
+    <tr>
+      <th>created</th>
+      <td><%= @organization.created_at %></td>
+    </tr>
+    <tr>
+      <th>details</th>
+      <td><%= @organization.details %></td>
+    </tr>
+    <tr>
+      <th>shared_tickets</th>
+      <td><%= @organization.shared_tickets %></td>
+    </tr>
+    <tr>
+      <th>tags</th>
+      <td><%= @organization.tags %></td>
+    </tr>
+  </table>
+
+</div>
+

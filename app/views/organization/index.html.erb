@@ -1,0 +1,36 @@
+<% @page_title = "All Organizations" %>
+
+<div class="organizations index">
+  <h2>Organizations</h2>
+
+  <table class="listing" summary="Organization list">
+    <tr class="header">
+      <th>_id</th>
+      <th>url</th>
+      <th>external_id</th>
+      <th>name</th>
+      <th>domain_names</th>
+      <th>created_at</th>
+      <th>details</th>
+      <th>shared_tickets</th>
+      <th>tags</th>
+      <th>action</th>
+    </tr>
+    <% @organizations.each do |organization| %>
+    <tr>
+      <td><%= organization._id %></td>
+      <td><%= organization.url %></td>
+      <td><%= organization.external_id %></td>
+      <td><%= organization.name %></td>
+      <td><%= organization.domain_names %></td>
+      <td><%= organization.created_at %></td>
+      <td><%= organization.details %></td>
+      <td><%= organization.shared_tickets %></td>
+      <td><%= organization.tags %></td>
+      <td class="actions">
+        <%= link_to("Show", organization_path(organization), :class => 'action show') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

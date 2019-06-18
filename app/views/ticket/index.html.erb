@@ -1,0 +1,48 @@
+<% @page_title = "All Tickets" %>
+
+<div class="tickets index">
+  <h2>Tickets</h2>
+
+  <table class="listing" summary="Ticket list">
+    <tr class="header">
+      <th>_id</th>
+      <th>url</th>
+      <th>external_id</th>
+      <th>created_at</th>
+      <th>type</th>
+      <th>subject</th>
+      <th>priority</th>
+      <th>status</th>
+      <th>submitter_id</th>
+      <th>assignee_id</th>
+      <th>organization_id</th>
+      <th>tags</th>
+      <th>has_incidents</th>
+      <th>due_at</th>
+      <th>via</th>
+      <th>action</th>
+    </tr>
+    <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket._id %></td>
+      <td><%= ticket.url %></td>
+      <td><%= ticket.external_id %></td>
+      <td><%= ticket.created_at %></td>
+      <td><%= ticket.type %></td>
+      <td><%= ticket.subject %></td>
+      <td><%= ticket.priority %></td>
+      <td><%= ticket.status %></td>
+      <td><%= @submitter_id %></td>
+      <td><%= @asignee_id %></td>
+      <td><%= @organization_id %></td>
+      <td><%= ticket.tags %></td>
+      <td><%= ticket.has_incidents ? 'true' : 'false' %></td>
+      <td><%= ticket.due_at %></td>
+      <td><%= ticket.via %></td>      
+      <td class="actions">
+        <%= link_to("Show", ticket_path(ticket), :class => 'action show') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

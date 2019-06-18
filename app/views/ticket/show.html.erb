@@ -1,0 +1,76 @@
+<% @page_title = "Show Ticket Detail" %>
+
+<%= link_to("<< Back to List", ticket_index_path, :class => 'back-link') %>
+
+<div class="tickets show">
+  <h2>Show Ticket Detail</h2>
+
+  <table summary="Ticket detail view">
+    <tr>
+      <th>_id</th>
+      <td><%= @ticket._id %></td>
+    </tr>
+    <tr>
+      <th>url</th>
+      <td><%= @ticket.url %></td>
+    </tr>
+    <tr>
+      <th>external_id</th>
+      <td><%= @ticket.external_id %></td>
+    </tr>
+    <tr>
+      <th>created</th>
+      <td><%= @ticket.created_at %></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><%= @ticket.type %></td>
+    </tr>
+    <tr>
+      <th>subject</th>
+      <td><%= @ticket.subject %></td>
+    </tr>
+    <tr>
+      <th>description</th>
+      <td><%= @ticket.description %></td>
+    </tr>
+    <tr>
+      <th>priority</th>
+      <td><%= @ticket.priority %></td>
+    </tr>
+    <tr>
+      <th>status</th>
+      <td><%= @ticket.status %></td>
+    </tr>
+    <tr>
+      <th>submitter_id</th>
+      <td><%= @submitter_id %></td>
+    </tr>
+    <tr>
+      <th>assignee_id</th>
+      <td><%= @tassignee_id %></td>
+    </tr>
+    <tr>
+      <th>organization_id</th>
+      <td><%= @organization_id %></td>
+    </tr>
+    <tr>
+      <th>tags</th>
+      <td><%= @ticket.tags %></td>
+    </tr>
+    <tr>
+      <th>has_incidents</th>
+      <td><%= @ticket.has_incidents ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>due_at</th>
+      <td><%= @ticket.due_at %></td>
+    </tr>        
+    <tr>
+      <th>via</th>
+      <td><%= @ticket.via %></td>
+    </tr>
+  </table>
+
+</div>
+

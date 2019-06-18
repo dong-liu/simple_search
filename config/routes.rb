@@ -9,6 +9,18 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user do
+    member do
+      get :delete
+    end
+  end
+
+  resources :ticket do
+    member do
+      get :delete
+    end
+  end
+
 	# default route
   #get ':controller(/:action(/:id))'
 

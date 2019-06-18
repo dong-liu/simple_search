@@ -1,0 +1,56 @@
+<% @page_title = "All Users" %>
+
+<div class="users index">
+  <h2>Users</h2>
+
+  <table class="listing" summary="User list">
+    <tr class="header">
+      <th>_id</th>
+      <th>url</th>
+      <th>external_id</th>
+      <th>name</th>
+      <th>alias</th>
+      <th>created_at</th>
+      <th>active</th>
+      <th>verified</th>
+      <th>shared</th>
+      <th>locale</th>
+      <th>timezone</th>
+      <th>last_login_at</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>signature</th>
+      <th>organization_id</th>
+      <th>tags</th>
+      <th>suspended</th>
+      <th>role</th>
+      <th>action</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user._id %></td>
+      <td><%= user.url %></td>
+      <td><%= user.external_id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.alias %></td>
+      <td><%= user.created_at %></td>
+      <td><%= user.active ? 'true' : 'false' %></td>
+      <td><%= user.verified ? 'true' : 'false' %></td>
+      <td><%= user.shared ? 'true' : 'false' %></td>
+      <td><%= user.locale %></td>
+      <td><%= user.timezone %></td>
+      <td><%= user.last_login_at %></td>
+      <td><%= user.email %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.signature %></td>
+      <td><%= @organization_id %></td>
+      <td><%= user.tags %></td>
+      <td><%= user.suspended ? 'true' : 'false' %></td>
+      <td><%= user.role %></td>
+      <td class="actions">
+        <%= link_to("Show", user_path(user), :class => 'action show') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -5,14 +5,14 @@ class CreateOrganizations < ActiveRecord::Migration[5.0]
 	    t.string "external_id"
 	    t.string "name"
 	    t.string "domain_names"
-      t.datetime "created_at"
+      t.string "created_at", null: false, default: Time.now
 	    t.string "details"
 	    t.boolean "shared_tickets"
 	    t.string "tags"
 
       t.datetime "updated_at"
     end   
-    execute "ALTER TABLE organizations AUTO_INCREMENT = 101;"
+    #execute "ALTER TABLE organizations AUTO_INCREMENT = 101;"
   end
 
   def down

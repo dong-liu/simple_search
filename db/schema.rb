@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20190614021742) do
     t.string   "_id",                                                                  null: false
     t.string   "url"
     t.string   "external_id"
-    t.string   "created_at",                    default: "2019-06-17 20:42:32.633849", null: false
+    t.string   "created_at",                    default: "2019-06-18 08:10:54.377575", null: false
     t.string   "type"
     t.string   "subject"
     t.text     "description",     limit: 65535
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20190614021742) do
     t.integer  "organization_id"
     t.string   "tags"
     t.boolean  "has_incidents"
-    t.string   "due_at",                        default: "2019-06-17 20:42:32.633890"
+    t.string   "due_at",                        default: "2019-06-18 08:10:54.377646"
     t.string   "via"
     t.datetime "updated_at"
     t.index ["_id"], name: "index_tickets_on__id", unique: true, using: :btree
@@ -53,13 +53,13 @@ ActiveRecord::Schema.define(version: 20190614021742) do
     t.string   "external_id"
     t.string   "name"
     t.string   "alias"
-    t.string   "created_at",      default: "2019-06-17 17:55:46.140845", null: false
+    t.string   "created_at",      default: "2019-06-18 08:11:14.516557", null: false
     t.boolean  "active"
     t.boolean  "verified"
     t.boolean  "shared"
     t.string   "locale"
     t.string   "timezone"
-    t.datetime "last_login_at"
+    t.string   "last_login_at",   default: "2019-06-18 08:11:14.516599"
     t.string   "email",           default: ""
     t.string   "phone"
     t.string   "signature",       default: "Don't Worry Be Happy!"

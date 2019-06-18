@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20190614021742) do
     t.string   "external_id"
     t.string   "name"
     t.string   "domain_names"
-    t.datetime "created_at"
+    t.string   "created_at",     default: "2019-06-17 17:40:26.901423", null: false
     t.string   "details"
     t.boolean  "shared_tickets"
     t.string   "tags"
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20190614021742) do
   end
 
   create_table "tickets", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.string   "_id",                           null: false
+    t.string   "_id",                                                                  null: false
     t.string   "url"
     t.string   "external_id"
-    t.datetime "created_at"
+    t.string   "created_at",                    default: "2019-06-17 20:42:32.633849", null: false
     t.string   "type"
     t.string   "subject"
     t.text     "description",     limit: 65535
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20190614021742) do
     t.integer  "organization_id"
     t.string   "tags"
     t.boolean  "has_incidents"
-    t.datetime "due_at"
+    t.string   "due_at",                        default: "2019-06-17 20:42:32.633890"
     t.string   "via"
     t.datetime "updated_at"
     t.index ["_id"], name: "index_tickets_on__id", unique: true, using: :btree
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20190614021742) do
     t.string   "external_id"
     t.string   "name"
     t.string   "alias"
-    t.datetime "created_at"
+    t.string   "created_at",      default: "2019-06-17 17:55:46.140845", null: false
     t.boolean  "active"
     t.boolean  "verified"
     t.boolean  "shared"

@@ -1,4 +1,4 @@
-class OrganizationController < ApplicationController
+class OrganizationsController < ApplicationController
 
   layout "main"
 

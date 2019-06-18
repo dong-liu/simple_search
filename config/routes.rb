@@ -3,19 +3,19 @@ Rails.application.routes.draw do
   #get 'organization/index'
   #get 'organization/show'
  
-  resources :organization do
+  resources :organizations do
     member do
       get :delete
     end
   end
 
-  resources :user do
+  resources :users do
     member do
       get :delete
     end
   end
 
-  resources :ticket do
+  resources :tickets do
     member do
       get :delete
     end

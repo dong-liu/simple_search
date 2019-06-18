@@ -1,4 +1,4 @@
-class TicketController < ApplicationController
+class TicketsController < ApplicationController
 
   layout "main"
 

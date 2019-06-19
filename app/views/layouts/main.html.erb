@@ -4,18 +4,20 @@
     <title>Simple Search: <%= @page_title || "Main" %></title>
     <%= stylesheet_link_tag('main', :media => 'all') %>
   </head>
+
   <body>
 
     <div id="header">
       <h1>Simple Search</h1>
     </div>
     <div id="main">
-      <div id="content">
+      <div id="content">   	
         <%= yield %>
       </div>
     </div>
     <div id="footer">
-      <p id="copyright">&copy; dongliu.us@gamil.com</p>
+      <p id="email">dongliu.us@gamil.com</p>
     </div>
+
   </body>
 </html>

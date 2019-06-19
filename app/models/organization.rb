@@ -5,11 +5,11 @@ class Organization < ApplicationRecord
 	has_many :users
 	has_many :tickets
 
-  scope :shared_tickets, lambda { where(:shared_tickets => true) }
+  scope :shared_tickets, -> { where(:shared_tickets => true) }
 
-  scope :sorted, lambda { order("_id ASC") }
-  scope :newest_first, lambda { order("created_at DESC") }
+  scope :sorted, -> { order("_id ASC") }
+  scope :newest_first, -> { order("created_at DESC") }
 
-  scope :search, lambda {|query| where(["name LIKE ?", "%#{query}%"]) }
+  scope :search_with_id, -> (id) { where(:id => id) }
 
 end

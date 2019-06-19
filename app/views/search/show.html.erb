@@ -1,0 +1,19 @@
+<% @page_title = "Search a specific model" %>
+<div class="search show">
+	<%= link_to("<< Back to Main Search Menu", search_path, :class => 'back-link') %>
+	<div>
+		<% if @search_from_model %>
+      <%= form_for(:search, :url => perform_search_path, :method => 'get') do |f| %>
+      	<div>
+      		<h4>Select from the following models: 1) Users or 2) Tickets or 3) Organizations</h4>
+      		<div><%= f.text_field(:model) %></div>
+      		Enter search term:
+      		<div><%= f.text_field(:field) %></div>
+      		Enter search value:
+      		<div><%= f.text_field(:value) %></div>
+      		<%= f.submit("Search") %>
+      	</div>
+      <% end %>
+   	<% end %>
+	</div>
+</div>

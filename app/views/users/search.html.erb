@@ -1,0 +1,106 @@
+<% @page_title = "Show User Detail" %>
+
+<% if @user.nil? %>
+  <% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>  
+<% else %>
+	<div class="users show">
+	  <h2>User Search Result</h2>
+
+	  <table summary="User detail view">
+	    <tr>
+	      <th>_id</th>
+	      <td><%= @user.id %></td>
+	    </tr>
+	    <tr>
+	      <th>url</th>
+	      <td><%= @user.url %></td>
+	    </tr>
+	    <tr>
+	      <th>external_id</th>
+	      <td><%= @user.external_id %></td>
+	    </tr>
+	    <tr>
+	      <th>name</th>
+	      <td><%= @user.name %></td>
+	    </tr>
+	    <tr>
+	      <th>alias</th>
+	      <td><%= @user.alias %></td>
+	    </tr>
+	    <tr>
+	      <th>created</th>
+	      <td><%= @user.created_at %></td>
+	    </tr>
+	    <tr>
+	      <th>active</th>
+	      <td><%= @user.active ? 'true' : 'false' %></td>
+	    </tr>
+	    <tr>
+	      <th>verified</th>
+	      <td><%= @user.verified ? 'true' : 'false' %></td>
+	    </tr>
+	    <tr>
+	      <th>shared</th>
+	      <td><%= @user.shared ? 'true' : 'false' %></td>
+	    </tr>
+	    <tr>
+	      <th>locale</th>
+	      <td><%= @user.locale %></td>
+	    </tr>
+	    <tr>
+	      <th>timezone</th>
+	      <td><%= @user.timezone %></td>
+	    </tr>
+	    <tr>
+	      <th>last_login_at</th>
+	      <td><%= @user.last_login_at %></td>
+	    </tr>
+	    <tr>
+	      <th>email</th>
+	      <td><%= @user.email %></td>
+	    </tr>    
+	     <tr>
+	      <th>phone</th>
+	      <td><%= @user.phone %></td>
+	    </tr>
+	    <tr>
+	      <th>signature</th>
+	      <td><%= @user.signature %></td>
+	    </tr>
+	    <tr>
+	      <th>organization_id</th>
+	      <td><%= @organization.id %></td>
+	    </tr>
+	    <tr>
+	      <th>tags</th>
+	      <td><%= @user.tags %></td>
+	    </tr>
+	    <tr>
+	      <th>suspended</th>
+	      <td><%= @user.suspended ? 'true' : 'false' %></td>
+	    </tr>
+	    <tr>
+	      <th>role</th>
+	      <td><%= @user.role %></td>
+	    </tr>        
+	    <tr>
+	      <th>organization_name</th>
+	      <td><%= @organization.name %></td>
+	    </tr>
+	    <% if !@tickets.nil? %>
+		    <% @tickets.each_with_index do |ticket, index| %>
+		      <tr>
+			      <th><%= index %></th>
+			      <td><%= ticket.subject %></td>
+		    	</tr>
+		    <% end %>
+		  <% end %>
+	  </table>
+	</div>
+<% end %>
+
+

@@ -5,7 +5,9 @@ class SearchController < ApplicationController
 
   def show
   	if params[:search_menu].nil?
-  		flash.now[:notice] = "Please choose from one of the options."
+  		# for whatever the reason, we didn't catch user's input from the previous menu
+  		flash[:notice] = "The last choice is not valid. Please try again."
+  		redirect_to(search_path)
   	else
       @choice = params[:search_menu][:choice]
       case @choice.downcase
@@ -13,11 +15,11 @@ class SearchController < ApplicationController
       	@search_from_model = ["Users", "Tickets", "Organizations"]
       when "2"
       	redirect_to(view_list_path)
-      when "3"
       when "quit"
       	redirect_to(search_exit_path)
       else
-      	flash.now[:notice] = "The option is not valid, please try again."
+      	flash[:notice] = "The choice is not valid. Please try again."
+      	redirect_to(search_path)
       end
     end
   end
@@ -27,7 +29,8 @@ class SearchController < ApplicationController
 
   def perform_search
   	if params[:search].nil?
-  		flash.now[:notice] = "Please choose one of the models to search from."
+  		flash.now[:notice] = "The last choice is not valid. Please try again."
+  		redirect_to(search_path)
   	else
     	@model = params[:search][:model]
     	@field = params[:search][:field]
@@ -40,7 +43,8 @@ class SearchController < ApplicationController
     	when "3"			#Organization
     		redirect_to(search_organization_path(@organization, :field => @field, :value => @value))
     	else
-    		flash.now[:notice] = "The option is not valid, please try again."
+    		flash[:notice] = "The option is not valid, please try again."
+    		redirect_to(search_show_path)
     	end
   	end
   end

@@ -37,11 +37,11 @@ class SearchController < ApplicationController
     	@value = params[:search][:value]
     	case @model
     	when "1"			#User
-    		redirect_to(search_user_path(@user, :field => @field, :value => @value))
+    		redirect_to(search_user_path(:field => @field, :value => @value))
     	when "2"			#Tickets
-    		redirect_to(search_ticket_path(@ticket, :field => @field, :value => @value))
+    		redirect_to(search_ticket_path(:field => @field, :value => @value))
     	when "3"			#Organization
-    		redirect_to(search_organization_path(@organization, :field => @field, :value => @value))
+    		redirect_to(search_organization_path(:field => @field, :value => @value))
     	else
     		flash[:notice] = "The option is not valid, please try again."
     		redirect_to(search_show_path)

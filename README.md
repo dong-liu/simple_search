@@ -15,10 +15,11 @@ Database creation
 * Run the db:migrate to create the database tables in the following order: Organization first, then Ticket, User last.
 
 Data population
-* Run the following tasks to prepopulate the date
+* Run the following tasks to prepopulate the data
   - rake prep:import_existing_organization_data
   - rake prep:import_existing_user_data
   - rake prep:import_existing_ticket_data
+  For importing the JSON data, I made an assumption that wouldn't be done very frequent. Therefore, I made it an one-off task. If later, that needs to be done again at a regular basis, a scheduled job can be created to achieve that.
 
 Run
 * Just bring up your rails server, and type in the URL http://localhost:3000/search.

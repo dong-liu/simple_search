@@ -94,7 +94,7 @@
 	    <% if !@tickets.nil? %>
 		    <% @tickets.each_with_index do |ticket, index| %>
 		      <tr>
-			      <th><%= index %></th>
+			      <th>ticket_<%= index %></th>
 			      <td><%= ticket.subject %></td>
 		    	</tr>
 		    <% end %>

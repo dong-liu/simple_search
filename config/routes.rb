@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'organizations/search/:field/:value', to: 'organizations#search', :as => 'search_organization'
   get 'tickets/search/:field/:value', to: 'tickets#search', :as => 'search_ticket'
 
-=begin
   resources :organizations do
     member do
       get :delete
@@ -28,7 +27,6 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-=end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

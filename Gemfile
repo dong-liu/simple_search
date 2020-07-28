@@ -28,7 +28,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # A JSON parser best suited for huge JSON documents that don't fit in memory.
-gem 'json', '~> 2.1.0'
+gem 'json', '~> 2.3.0'
 # A library for bulk insertion of data into your database using ActiveRecord
 gem 'activerecord-import'
 # Use Redis adapter to run Action Cable in production
